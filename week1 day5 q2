@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution 
+{
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        /*Account Number(Long), Account Holder Name(String), Gender (M/F) (Character) and Amount (Integer) */
+        Scanner scan=new Scanner(System.in);
+        long Account_Number=scan.nextLong();
+        scan.nextLine();
+        String Account_Holder_Name=scan.nextLine();
+        char Gender=scan.next().charAt(0);
+        scan.nextLine();
+        int Amount=scan.nextInt();
+        if(Amount>=20000)
+        {
+            if(Gender=='F')
+            {
+                System.out.println("Hi Ms. "+Account_Holder_Name+"!");
+                System.out.println("Insufficient Funds! You can not withdraw "+Amount+".");
+            }
+            else
+            {
+                System.out.println("Hi Mr. "+Account_Holder_Name+"!");
+                System.out.println("Insufficient Funds! You can not withdraw "+Amount+".");
+            }
+        }
+        else
+        {
+            if(Gender=='F')
+            {
+                System.out.println("Hi Ms. "+Account_Holder_Name+"!");
+                System.out.println("Your Account Balance after withdrawl is "+(20000-Amount)+".");
+            }
+            else
+            {
+                System.out.println("Hi Mr. "+Account_Holder_Name+"!");
+                System.out.println("Your Account Balance after withdrawl is "+(20000-Amount)+".");
+            }
+        }
+    }
+}
