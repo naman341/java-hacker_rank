@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan= new Scanner(System.in);
+        int n = scan.nextInt();
+        double t = scan.nextDouble();
+        if(n==1)
+        {
+            double temperature = ((t-32)*5)/9;
+            System.out.printf("%.2f",temperature);
+        }
+        if(n==2)
+        {
+            double temperature= (t*1.8)+32;
+            System.out.printf("%.1f",temperature);
+        }
+    }
+}
