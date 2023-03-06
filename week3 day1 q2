@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         Scanner scan=new Scanner(System.in);
+         double ba=scan.nextDouble();
+         double ir = 10.0;
+         int ld = 12;
+         double total= ba * (1+ir/100);
+         double emi=total/ld;
+         DecimalFormat df = new DecimalFormat("#.00");
+         df.setRoundingMode(RoundingMode.DOWN);
+         System.out.println((int)total);
+         System.out.println( df.format(emi));
+    }
+}
