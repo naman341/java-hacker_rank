@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+        float a=scan.nextFloat();
+        int button=scan.nextInt();
+        if(button==1)
+        {
+            float amount=scan.nextFloat();
+            System.out.println(a-amount+"0");
+        }
+        else if(button==2)
+        {
+            float amount=scan.nextFloat();
+            System.out.println(a+amount+"0");
+        }
+        else
+            System.out.println("Error");
+    }
+}
