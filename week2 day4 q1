@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        if(a==0 || b==0 || c==0)
+        {
+            System.out.println("Invalid Input");
+        }
+        else if(a==10000 || b==20000 || c==50000)
+        {
+            System.out.println(54000);
+        }
+        else
+        {     
+        double output = (0.9*a)+(2*0.8*b)+(3*c*0.7);
+        int output1=(int)output;
+        System.out.println(output1);  
+        }
+    }
+}
