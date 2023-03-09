@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+                Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine().toLowerCase();
+
+        if (isPalindrome(input)) {
+            System.out.println("true");
+        } else if (canMakePalindromeByRemovingOneChar(input)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+
+    private static boolean isPalindrome(String str) {
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean canMakePalindromeByRemovingOneChar(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            String temp = str.substring(0, i) + str.substring(i + 1);
+            if (isPalindrome(temp)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
