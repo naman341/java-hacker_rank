@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Solution{
+    
+    public static boolean isBalanced(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        for(char c : s.toCharArray()) {
+            if(c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else if(c == ')' || c == ']' || c == '}') {
+                if(stack.isEmpty()) {
+                    return false;
+                }
+                char top = stack.pop();
+                if((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{')) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNextLine()) {
+            String s = scanner.nextLine();
+            if(isBalanced(s)) {
+                System.out.println(1>0);
+            } else {
+                System.out.println(0>1);
+            }
+        }
+        scanner.close();
+    }
+}
