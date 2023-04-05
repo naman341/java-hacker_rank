@@ -1,0 +1,21 @@
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Scanner;
+public class CharCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        if (input.length() <= 5) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        Map<Character, Integer> charCounts = new TreeMap<>();
+        for (char c : input.toCharArray()) {
+            charCounts.put(c, charCounts.getOrDefault(c, 0) + 1);
+        }
+        StringBuilder output = new StringBuilder();
+        for (Map.Entry<Character, Integer> entry : charCounts.entrySet()) {
+            output.append(entry.getKey()).append(entry.getValue());
+        }
+        System.out.println(output.toString());
+    }}
