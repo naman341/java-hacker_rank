@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<String> medicines = new ArrayList<>();
+
+        for (int i = 0; i < 3; i++) {
+            String medicine = sc.nextLine();
+            medicines.add(medicine);
+        }
+
+        Collections.sort(medicines);
+        
+        for (String medicine : medicines) {
+            System.out.println(medicine);
+        }
+    }
+}
